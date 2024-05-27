@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MathML and SVG Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        /* Styling for the title */
+        h1 {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #336699;
+            margin-top: 20px;
+        }
+
+        /* Styling for the SVG graphic */
+        svg {
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* Styling for the back link */
+        a {
+            display: block;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #0066cc;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG Castle and MathML Equation</h1>
+    
+    <svg width="300" height="400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect x="0" y="0" width="300" height="400" fill="#e6f7ff" />
+        
+        <!-- Castle base -->
+        <rect x="50" y="150" width="200" height="200" fill="#b3cde0" />
+        
+        <!-- Towers -->
+        <rect x="50" y="50" width="50" height="100" fill="#6497b1" />
+        <rect x="200" y="50" width="50" height="100" fill="#6497b1" />
+        
+        <!-- Roofs -->
+        <polygon points="50,50 75,20 100,50" fill="#005b96" />
+        <polygon points="200,50 225,20 250,50" fill="#005b96" />
+        
+        <!-- Windows -->
+        <rect x="70" y="200" width="30" height="30" fill="#d9eefc" />
+        <rect x="200" y="200" width="30" height="30" fill="#d9eefc" />
+        <rect x="135" y="250" width="30" height="30" fill="#d9eefc" />
+        
+        <!-- Door -->
+        <rect x="140" y="300" width="20" height="50" fill="#8c8c8c" />
+    </svg>
+    
+    <math display="block">
+        <mstyle mathsize="1.5em">
+            <mrow>
+                <msup>
+                    <mi>a</mi>
+                    <mn>2</mn>
+                </msup>
+                <mo>+</mo>
+                <msup>
+                    <mi>b</mi>
+                    <mn>2</mn>
+                </msup>
+                <mo>=</mo>
+                <msup>
+                    <mi>c</mi>
+                    <mn>2</mn>
+                </msup>
+            </mrow>
+        </mstyle>
+    </math>
+    
+    <a href="index.php">Back to Home</a>
+</body>
+</html>

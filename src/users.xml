@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users SYSTEM "users.dtd">
+<users>
+<user><username>tester</username><password>$2y$10$xctQPujEZKWp1ERNIB843euuKyEGj8YZm5CAoygj6fNsNQew5wXYW</password><email>tester@tester.tester</email><user_type>user</user_type></user><user><username>tester2</username><password>$2y$10$.pacxPvZIDCK20WXk9imgu8qaYlelaTQDaAuXC34sCrU3cu6n32gC</password><email>tester2@tester2.tester2</email><user_type>admin</user_type></user><user><username>tester3</username><password>$2y$10$mnmEGhMPAMKekcaznHu9BeIJBhwLmMSje2NjxHMvQO2I27BePbNPK</password><email>tester3@tester3.tester3</email><user_type>user</user_type></user></users>
