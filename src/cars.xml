@@ -13,11 +13,11 @@
     <price>1100</price>
     <image>assets/6653a768080ac0.16158790.jpg</image>
   </car>
-  
   <car id="4">
     <brand>Daewoo</brand>
     <model>Matiz</model>
-    <price>500</price>
-    <image>assets/6653dc19b670a0.32122186.jpg</image>
+    <price>5555</price>
+    <image>assets/logan.jpg</image>
   </car>
+  
 </cars>

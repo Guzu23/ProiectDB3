@@ -13,14 +13,39 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         $brand = $_POST['brand'];
         $model = $_POST['model'];
         $price = $_POST['price'];
-        foreach ($xml->car as $c) {
-            if ($c['id'] == $id) {
-                $c->brand = $brand;
-                $c->model = $model;
-                $c->price = $price;
-                break;
+
+        if(isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        
+            $imageName = $_FILES['image']['name'];
+            $imageTemp = $_FILES['image']['tmp_name'];
+            $imagePath = "assets/" . $imageName;
+            
+            if (move_uploaded_file($imageTemp, $imagePath)) {
+                foreach ($xml->car as $c) {
+                    if ($c['id'] == $id) {
+                        $c->brand = $brand;
+                        $c->model = $model;
+                        $c->price = $price;
+                        $c->image = $imagePath;
+                        break;
+                    }
+                }
+            } else {
+                echo "Eroare imagine";
+                exit;
+            }
+        } 
+        else {
+            foreach ($xml->car as $c) {
+                if ($c['id'] == $id) {
+                    $c->brand = $brand;
+                    $c->model = $model;
+                    $c->price = $price;
+                    break;
+                }
             }
         }
+        
         $xml->asXML('cars.xml');
         header("Location: index.php");
         exit();
@@ -41,7 +66,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 <body>
     <div class="container">
         <h1 class="mt-4">Edit Car</h1>
-        <form method="post" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $car['id']; ?>">
             <div class="mb-3">
                 <label for="brand" class="form-label">Brand:</label>
@@ -55,8 +80,12 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <label for="price" class="form-label">Price:</label>
                 <input type="number" class="form-control" id="price" name="price" value="<?php echo $car->price; ?>" required>
             </div>
-            
+            <div class="mb-3">
+                <label for="image" class="form-label">Car Image:</label>
+                <input type="file" class="form-control" id="image" name="image" >
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
